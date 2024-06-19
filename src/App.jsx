@@ -1,40 +1,32 @@
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 
+import AppLayout from "./layouts/AppLayout";
+import HomePage from "./pages/HomePage";
+import SearchPage from "./pages/SearchPage";
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <div>
-        <h1 className="text-3xl font-bold underline">Home Page</h1>
-        <Link to="about">About Us</Link>
-      </div>
-    ),
-  },
-  {
-    path: "search/:keywords",
-    element: (
-      <div>
-        <h1 className="text-3xl font-bold underline">Search Results</h1>
-        <Link to="about">About Us</Link>
-      </div>
-    ),
-  },
-  {
-    path: "bookmarks",
-    element: (
-      <div>
-        <h1 className="text-3xl font-bold underline">Bookmarks</h1>
-        <Link to="about">About Us</Link>
-      </div>
-    ),
-  },
-  {
-    path: "about",
-    element: (
-      <div>
-        <h1 className="text-3xl font-bold underline">About Us</h1>
-      </div>
-    ),
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "search/:keywords",
+        element: <SearchPage />,
+      },
+      {
+        path: "bookmarks",
+        element: (
+          <div>
+            <h1 className="text-3xl font-bold underline">Bookmarks</h1>
+            <Link to="about">About Us</Link>
+          </div>
+        ),
+      },
+    ],
   },
   {
     path: "*",
