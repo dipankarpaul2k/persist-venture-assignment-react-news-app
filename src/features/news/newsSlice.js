@@ -10,13 +10,13 @@ const newsSlice = createSlice({
   reducers: {
     addBookmark: (state, action) => {
       state.bookmarks.push(action.payload);
-      localStorage.setItem("bookmarks", JSON.stringify(state.bookmarks));
+      localStorage.setItem("newsly_bookmarks", JSON.stringify(state.bookmarks));
     },
     removeBookmark: (state, action) => {
       state.bookmarks = state.bookmarks.filter(
         (bookmark) => bookmark.url !== action.payload
       );
-      localStorage.setItem("bookmarks", JSON.stringify(state.bookmarks));
+      localStorage.setItem("newsly_bookmarks", JSON.stringify(state.bookmarks));
     },
   },
 });

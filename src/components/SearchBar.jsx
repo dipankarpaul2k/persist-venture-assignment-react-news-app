@@ -24,7 +24,7 @@ export default function SearchBar() {
           <label htmlFor="search" className="hidden">
             Search
           </label>
-          <div className="relative w-full sm:max-w-[400px] mx-auto border-2 border-gray-800 rounded-md">
+          <div className="relative w-full sm:max-w-[400px] mx-auto border border-gray-800 rounded-md">
             <span className="absolute inset-y-0 left-0 flex items-center pl-2">
               <button
                 type="button"

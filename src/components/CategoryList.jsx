@@ -47,7 +47,7 @@ export default function CategoryList({
           key={category}
           className={`px-2 py-1.5 rounded ${
             selectedCategory === category
-              ? "bg-blue-500 text-white"
+              ? "bg-blue-600 text-white"
               : "bg-[#edf5fe]"
           }`}
           onClick={() => setSelectedCategory(category)}

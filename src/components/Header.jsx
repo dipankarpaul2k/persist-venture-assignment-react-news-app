@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { FaArrowLeft, FaBookmark, FaSearch } from "react-icons/fa";
 import SearchBar from "./SearchBar";
@@ -25,7 +25,7 @@ export default function Header() {
           </div>
         ) : (
           <>
-            <h1 className="text-2xl sm:text-3xl font-bold">Newsly</h1>
+            <Link className="text-2xl sm:text-3xl font-bold">Newsly</Link>
             <div className="flex-1 max-sm:hidden">
               <SearchBar />
             </div>
