@@ -15,7 +15,7 @@ const SearchPage = () => {
 
   return (
     <>
-      <h2 className="text-xl font-semibold sm:font-bold px-4">
+      <h2 className="text-xl font-semibold sm:font-bold px-4 pt-4">
         Search results for {keywords}
       </h2>
       <NewsList

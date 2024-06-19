@@ -8,8 +8,8 @@ const NewsList = ({ articles, error, isFetching, page, setPage }) => {
   return (
     <div className="p-4">
       <div className="grid gap-4">
-        {articles.data.map((article) => (
-          <NewsItem key={article.url} article={article} />
+        {articles.data.map((article, index) => (
+          <NewsItem key={article.url} article={article} index={index} />
         ))}
       </div>
       <Pagination page={page} setPage={setPage} />

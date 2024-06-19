@@ -16,14 +16,16 @@ export const newsApi = createApi({
   endpoints: (builder) => ({
     getNewsList: builder.query({
       query: ({ page = 1, category = "General" }) =>
-        `trendings?topic=${category}&language=en&limit=10&page=${page}`,
+        `trendings?topic=${category}&language=en&limit=15&page=${page}`,
     }),
     searchNews: builder.query({
       query: ({ page = 1, query = "General" }) =>
-        `search/articles?query=${query}&language=en&limit=10&page=${page}`,
+        `search/articles?query=${query}&language=en&limit=15&page=${page}`,
     }),
     getNewsContent: builder.query({
-      query: ({ url }) => `article?url=${url}&type=plaintext`,
+      query: ({ url }) => `article?url=${url}&type=plaintext`, // html, plaintext
+      transformResponse: (response) => response.data,
+      transformErrorResponse: (response) => response.error,
     }),
   }),
 });

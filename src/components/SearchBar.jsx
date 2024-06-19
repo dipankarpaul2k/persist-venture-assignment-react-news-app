@@ -21,7 +21,7 @@ export default function SearchBar() {
     <div className="w-full">
       <form onSubmit={handleSubmit}>
         <fieldset className="w-full text-gray-800">
-          <label htmlFor="Search" className="hidden">
+          <label htmlFor="search" className="hidden">
             Search
           </label>
           <div className="relative w-full sm:max-w-[400px] mx-auto border-2 border-gray-800 rounded-md">

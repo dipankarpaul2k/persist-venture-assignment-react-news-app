@@ -1,8 +1,7 @@
-import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import AppLayout from "./layouts/AppLayout";
-import HomePage from "./pages/HomePage";
-import SearchPage from "./pages/SearchPage";
+import { BookmarkPage, DetailsPage, HomePage, SearchPage } from "./pages";
 
 const router = createBrowserRouter([
   {
@@ -19,12 +18,11 @@ const router = createBrowserRouter([
       },
       {
         path: "bookmarks",
-        element: (
-          <div>
-            <h1 className="text-3xl font-bold underline">Bookmarks</h1>
-            <Link to="about">About Us</Link>
-          </div>
-        ),
+        element: <BookmarkPage />,
+      },
+      {
+        path: "news/:encodedUrl",
+        element: <DetailsPage />,
       },
     ],
   },
