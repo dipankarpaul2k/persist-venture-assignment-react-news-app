@@ -1,13 +1,11 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-// import { useDispatch, useSelector } from "react-redux";
-// import { twMerge } from "tailwind-merge";
-
-// import { addBookmark, removeBookmark } from "../features/news/newsSlice";
+import { NewsList } from "../components";
 
 const BookmarkPage = () => {
   const [bookmarks, setBookmarks] = useState([]);
+  const [page, setPage] = useState(1);
+  const [itemsPerPage] = useState(10);
 
   useEffect(() => {
     const savedBookmarks =
@@ -15,27 +13,31 @@ const BookmarkPage = () => {
     setBookmarks(savedBookmarks);
   }, []);
 
+  // console.log(bookmarks);
+
+  const indexOfLastItem = page * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = bookmarks?.slice(indexOfFirstItem, indexOfLastItem);
+  const noPagination = bookmarks?.length > 10 ? true : false;
+
   return (
     <>
-      <div className="p-4">
-        <h1 className="text-2xl font-bold mb-4">Bookmarked News</h1>
-        {bookmarks.length === 0 ? (
-          <p>No bookmarks found.</p>
-        ) : (
-          <ul>
-            {bookmarks.map((bookmark, index) => (
-              <li key={index} className="mb-4">
-                <Link
-                  to={`/news/${encodeURIComponent(bookmark.url)}`}
-                  className="text-blue-500"
-                >
-                  {bookmark.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+      <h1 className="text-xl font-medium sm:font-semibold lg:font-bold px-4 pt-4">
+        Bookmarked News
+      </h1>
+      {bookmarks.length === 0 ? (
+        <p>No bookmarks found.</p>
+      ) : (
+        <NewsList
+          articles={currentItems}
+          error={null}
+          isLoading={null}
+          isFetching={null}
+          page={page}
+          setPage={setPage}
+          noPagination={noPagination}
+        />
+      )}
     </>
   );
 };

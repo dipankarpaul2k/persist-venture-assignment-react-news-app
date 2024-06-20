@@ -8,19 +8,20 @@ const SearchPage = () => {
   const [page, setPage] = useState(1);
   let { keywords } = useParams();
 
-  const { data, error, isFetching } = useSearchNewsQuery({
+  const { data, error, isFetching, isLoading } = useSearchNewsQuery({
     page,
     query: keywords,
   });
 
   return (
     <>
-      <h2 className="text-xl font-semibold sm:font-bold px-4 pt-4">
+      <h1 className="text-xl font-medium sm:font-semibold lg:font-bold px-4 pt-4">
         Search results for {keywords}
-      </h2>
+      </h1>
       <NewsList
         articles={data}
         error={error}
+        isLoading={isLoading}
         isFetching={isFetching}
         page={page}
         setPage={setPage}

@@ -15,7 +15,7 @@ export default function Header() {
     <header className="bg-[#edf5fe]">
       <nav className="flex items-center justify-between gap-4 p-3">
         {searchVisible ? (
-          <div className="flex items-center justify-between gap-4 w-full">
+          <div className="flex items-center justify-between gap-2 w-full">
             <div className="flex-1">
               <SearchBar />
             </div>
@@ -25,11 +25,14 @@ export default function Header() {
           </div>
         ) : (
           <>
-            <Link className="text-2xl sm:text-3xl font-bold">Newsly</Link>
+            <Link to="/" className="text-2xl sm:text-3xl font-bold">
+              Newsly
+            </Link>
             <div className="flex-1 max-sm:hidden">
               <SearchBar />
             </div>
-            <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center justify-between gap-4">
+              {/* search button */}
               <button
                 type="button"
                 className="sm:hidden"
@@ -37,6 +40,7 @@ export default function Header() {
               >
                 <FaSearch />
               </button>
+              {/* bookmark button */}
               <button
                 type="button"
                 onClick={() => navigate("/bookmarks")}

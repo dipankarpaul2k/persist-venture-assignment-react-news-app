@@ -11,7 +11,7 @@ export default function DetailsPage() {
 
   const { loading, error, data: article } = useFetchNews(url);
 
-  console.log(article);
+  // console.log(article);
 
   const sanitizeHtml = DOMPurify.sanitize(article?.content, {
     FORBID_TAGS: ["ul", "li", "a", "header"],
@@ -90,7 +90,7 @@ export default function DetailsPage() {
                 key={idx}
                 rel="noopener noreferrer"
                 to={`/search/${keyword}`}
-                className="px-3 py-1 rounded-sm hover:underline bg-blue-600 text-gray-50"
+                className="px-3 py-1 rounded-sm hover:underline bg-blue-500 text-gray-50"
               >
                 <span>#{keyword}</span>
               </Link>

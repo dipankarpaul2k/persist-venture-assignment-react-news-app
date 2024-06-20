@@ -17,10 +17,12 @@ export const newsApi = createApi({
     getNewsList: builder.query({
       query: ({ page = 1, category = "General" }) =>
         `trendings?topic=${category}&language=en&limit=15&page=${page}`,
+      transformResponse: (response) => response.data,
     }),
     searchNews: builder.query({
       query: ({ page = 1, query = "General" }) =>
         `search/articles?query=${query}&language=en&limit=15&page=${page}`,
+      transformResponse: (response) => response.data,
     }),
     getNewsContent: builder.query({
       query: ({ url }) => `article?url=${url}&type=plaintext`, // html, plaintext

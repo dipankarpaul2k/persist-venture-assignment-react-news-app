@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  bookmarks: JSON.parse(localStorage.getItem("bookmarks")) || [],
+  bookmarks: JSON.parse(localStorage.getItem("newsly_bookmarks")) || [],
 };
 
 const newsSlice = createSlice({

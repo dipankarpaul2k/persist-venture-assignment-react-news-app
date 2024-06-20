@@ -10,9 +10,11 @@ import NewsItemFooter from "./NewsItemFooter";
 const NewsItem = ({ article, index }) => {
   const dispatch = useDispatch();
   const bookmarks = useSelector((state) => state.news.bookmarks);
-  const isBookmarked = bookmarks.some(
+  const isBookmarked = bookmarks?.some(
     (bookmark) => bookmark.url === article.url
   );
+  // console.log(bookmarks);
+  // console.log(isBookmarked);
 
   const encodedUrl = encodeURIComponent(article.url);
 
