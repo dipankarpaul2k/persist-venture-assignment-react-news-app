@@ -1,9 +1,4 @@
-import {
-  FaDev,
-  FaGithub,
-  FaLinkedin,
-  FaWhatsapp,
-} from "react-icons/fa";
+import { FaDev, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 
 export const category = [
   "General",
@@ -79,7 +74,7 @@ export const socialLinks = [
   {
     to: "https://github.com/dipankarpaul2k",
     label: "GitHub",
-    icon: FaGithub,
+    icon: FaGithubSquare,
     target: "_blank",
     ariaLabel: "Github link",
   },
@@ -89,12 +84,5 @@ export const socialLinks = [
     icon: FaDev,
     target: "_blank",
     ariaLabel: "Dev.to link",
-  },
-  {
-    to: "https://wa.link/0y3avn",
-    label: "WhatsApp",
-    icon: FaWhatsapp,
-    target: "_blank",
-    ariaLabel: "Whatsapp link",
   },
 ];

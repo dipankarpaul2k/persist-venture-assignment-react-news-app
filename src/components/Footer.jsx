@@ -1,15 +1,11 @@
 import { Link } from "react-router-dom";
 import { socialLinks } from "../utils/constants";
-import { BsEmojiSmile } from "react-icons/bs";
 
 export default function Footer() {
   return (
     <footer className="bg-[#edf5fe] p-4">
       <div className="flex items-center justify-between flex-col md:flex-row w-full max-w-[1280px] mx-auto">
-        <div className="flex items-center gap-1">
-          <span>Thanks for visiting!</span>
-          <BsEmojiSmile />
-        </div>
+        <span>Thanks for visiting!</span>
         <div className="flex items-center gap-4">
           {socialLinks.map((social, idx) => (
             <Link
@@ -17,10 +13,12 @@ export default function Footer() {
               to={social.to}
               aria-label={social.ariaLabel}
               target="_blank"
-              className="hover:underline"
+              className="max-sm:underline hover:underline"
             >
-              {/* <social.label /> */}
-              {social.label}
+              <span className="sm:hidden">
+                <social.icon size={20} />
+              </span>
+              <span className="max-sm:hidden">{social.label}</span>
             </Link>
           ))}
         </div>
