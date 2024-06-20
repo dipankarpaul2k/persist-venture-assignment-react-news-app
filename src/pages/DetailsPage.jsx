@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import DOMPurify from "dompurify";
 
@@ -10,13 +11,19 @@ export default function DetailsPage() {
   const url = decodeURIComponent(encodedUrl);
 
   const { loading, error, data: article } = useFetchNews(url);
-
   // console.log(article);
 
   const sanitizeHtml = DOMPurify.sanitize(article?.content, {
     FORBID_TAGS: ["ul", "li", "a", "header"],
   });
   const authorsLength = article?.authors.length;
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   if (loading) {
     return (
@@ -74,6 +81,7 @@ export default function DetailsPage() {
               </Link>
               <span>{formatTime(article.date)}</span>
             </div>
+            {/* authors */}
             <p className="text-xs text-gray-600">
               By{" "}
               {article?.authors?.map((author, idx) => (
