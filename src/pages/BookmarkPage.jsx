@@ -11,7 +11,7 @@ const BookmarkPage = () => {
     const savedBookmarks =
       JSON.parse(localStorage.getItem("newsly_bookmarks")) || [];
     setBookmarks(savedBookmarks);
-  }, []);
+  }, [bookmarks]);
 
   // console.log(bookmarks);
 
@@ -26,7 +26,10 @@ const BookmarkPage = () => {
         Bookmarked News
       </h1>
       {bookmarks.length === 0 ? (
-        <p>No bookmarks found.</p>
+        <div className="min-h-[70vh] flex items-center justify-center flex-col gap-4">
+          <h1 className="text-2xl font-bold">You have no bookmarks yet.</h1>
+          <p className="text-xl font-semibold">Start adding your favourite news items to see them here.</p>
+        </div>
       ) : (
         <NewsList
           articles={currentItems}

@@ -8,3 +8,5 @@ export { default as NewsItemHeader } from "./NewsItemHeader";
 export { default as NewsList } from "./NewsList";
 export { default as Pagination } from "./Pagination";
 export { default as SearchBar } from "./SearchBar";
+export { default as Skeleton } from "./Skeleton";
+export { default as SkeletonNews } from "./SkeletonNews";

@@ -17,16 +17,20 @@ export default function NewsItemFooter({
   const authorsLength = article?.authors.length;
   return (
     <>
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
+      <div className="flex items-center justify-between gap-2">
+        {/* author(s) */}
+        <div className="flex items-center gap-2 w-2/3">
           <TiUserOutline />
-          {article.authors?.map((author, idx) => (
-            <span key={author}>
-              {author}
-              {idx === authorsLength - 1 ? "" : ","}
-            </span>
-          ))}
+          <div className="flex items-center gap-2 overflow-hidden">
+            {article.authors?.map((author, idx) => (
+              <span key={author} className="whitespace-nowrap">
+                {author}
+                {idx === authorsLength - 1 ? "" : ","}
+              </span>
+            ))}
+          </div>
         </div>
+        {/* share and bookmark */}
         <div className="flex items-center gap-2">
           <FacebookShareButton url={article?.url} quote={article?.title}>
             <FacebookIcon size={20} round />

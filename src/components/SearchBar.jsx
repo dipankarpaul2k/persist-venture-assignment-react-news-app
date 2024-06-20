@@ -16,7 +16,12 @@ export default function SearchBar() {
     }
 
     form.reset();
+
+    if (document.activeElement) {
+      document.activeElement.blur();
+    }
   };
+
   return (
     <div className="w-full">
       <form onSubmit={handleSubmit}>

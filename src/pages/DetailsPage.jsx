@@ -3,7 +3,7 @@ import DOMPurify from "dompurify";
 
 import useFetchNews from "../hooks/useFetchNews";
 import { formatTime } from "../utils/helperFns";
-import { Image } from "../components";
+import { Image, SkeletonNews } from "../components";
 
 export default function DetailsPage() {
   const { encodedUrl } = useParams();
@@ -18,7 +18,15 @@ export default function DetailsPage() {
   });
   const authorsLength = article?.authors.length;
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) {
+    return (
+      <>
+        <div>
+          <SkeletonNews />
+        </div>
+      </>
+    );
+  }
   if (error) {
     console.log(error);
     return (

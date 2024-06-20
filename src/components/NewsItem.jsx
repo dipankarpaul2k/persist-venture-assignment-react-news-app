@@ -31,13 +31,14 @@ const NewsItem = ({ article, index }) => {
   return (
     <div
       className={twMerge(
-        "p-4 border bg-[#edf5fe] flex flex-col gap-4 overflow-hidden rounded-lg shadow-sm",
+        "p-4 border bg-[#edf5fe] flex flex-col gap-4 overflow-hidden rounded-lg shadow-md md:max-h-52",
         flexDirection
       )}
     >
+      {/* news image */}
       <Link
-        to={`news/${encodedUrl}`}
-        className="h-52 md:h-40 w-full md:w-1/4 rounded-md overflow-hidden"
+        to={`/news/${encodedUrl}`}
+        className="h-full w-full md:w-1/4 rounded-md overflow-hidden"
       >
         <Image
           src={article.thumbnail}
@@ -45,9 +46,10 @@ const NewsItem = ({ article, index }) => {
           title={article.title}
         />
       </Link>
+      {/* news details */}
       <div className="flex flex-col flex-1">
         <NewsItemHeader article={article} />
-        <Link to={`news/${encodedUrl}`} className="flex-1 py-2">
+        <Link to={`/news/${encodedUrl}`} className="flex-1 py-2">
           <h2 className="text-lg font-bold md:line-clamp-1">{article.title}</h2>
           <p className="line-clamp-2">{article.excerpt}</p>
         </Link>
