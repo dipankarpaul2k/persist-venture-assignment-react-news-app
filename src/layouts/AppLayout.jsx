@@ -6,7 +6,7 @@ export default function AppLayout() {
   return (
     <>
       <Header />
-      <main className="container mx-auto flex-1">
+      <main className="container xl:max-w-[1280px] mx-auto flex-1">
         <Outlet />
       </main>
       <Footer />

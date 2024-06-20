@@ -5,7 +5,7 @@ import { BsEmojiSmile } from "react-icons/bs";
 export default function Footer() {
   return (
     <footer className="bg-[#edf5fe] p-4">
-      <div className="flex items-center justify-between flex-col md:flex-row">
+      <div className="flex items-center justify-between flex-col md:flex-row w-full max-w-[1280px] mx-auto">
         <div className="flex items-center gap-1">
           <span>Thanks for visiting!</span>
           <BsEmojiSmile />

@@ -26,7 +26,7 @@ const BookmarkPage = () => {
         Bookmarked News
       </h1>
       {bookmarks.length === 0 ? (
-        <div className="min-h-[70vh] flex items-center justify-center flex-col gap-4">
+        <div className="min-h-[70vh] flex items-center justify-center flex-col gap-4 text-center">
           <h1 className="text-2xl font-bold">You have no bookmarks yet.</h1>
           <p className="text-xl font-semibold">Start adding your favourite news items to see them here.</p>
         </div>

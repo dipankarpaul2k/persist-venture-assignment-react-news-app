@@ -24,16 +24,7 @@ export const newsApi = createApi({
         `search/articles?query=${query}&language=en&limit=15&page=${page}`,
       transformResponse: (response) => response.data,
     }),
-    getNewsContent: builder.query({
-      query: ({ url }) => `article?url=${url}&type=plaintext`, // html, plaintext
-      transformResponse: (response) => response.data,
-      transformErrorResponse: (response) => response.error,
-    }),
   }),
 });
 
-export const {
-  useGetNewsListQuery,
-  useSearchNewsQuery,
-  useGetNewsContentQuery,
-} = newsApi;
+export const { useGetNewsListQuery, useSearchNewsQuery } = newsApi;
