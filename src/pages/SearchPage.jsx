@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { useSearchNewsQuery } from "../features/news/newsApi";
-import NewsList from "../components/NewsList";
+import { NewsList } from "../components";
 
 const SearchPage = () => {
   const [page, setPage] = useState(1);

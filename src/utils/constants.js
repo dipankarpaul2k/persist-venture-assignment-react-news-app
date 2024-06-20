@@ -1,3 +1,10 @@
+import {
+  FaDev,
+  FaGithub,
+  FaLinkedin,
+  FaWhatsapp,
+} from "react-icons/fa";
+
 export const category = [
   "General",
   "Business",
@@ -59,4 +66,35 @@ export const category = [
   "Robot",
   "VR",
   "World",
+];
+
+export const socialLinks = [
+  {
+    to: "https://www.linkedin.com/in/iamdipankarpaul/",
+    label: "LinkedIn",
+    icon: FaLinkedin,
+    target: "_blank",
+    ariaLabel: "Linkedin link",
+  },
+  {
+    to: "https://github.com/dipankarpaul2k",
+    label: "GitHub",
+    icon: FaGithub,
+    target: "_blank",
+    ariaLabel: "Github link",
+  },
+  {
+    to: "https://dev.to/dipankarpaul",
+    label: "Dev.to",
+    icon: FaDev,
+    target: "_blank",
+    ariaLabel: "Dev.to link",
+  },
+  {
+    to: "https://wa.link/0y3avn",
+    label: "WhatsApp",
+    icon: FaWhatsapp,
+    target: "_blank",
+    ariaLabel: "Whatsapp link",
+  },
 ];

@@ -2,8 +2,8 @@ import { Link, useParams } from "react-router-dom";
 import DOMPurify from "dompurify";
 
 import useFetchNews from "../hooks/useFetchNews";
-import Image from "../components/Image";
 import { formatTime } from "../utils/helperFns";
+import { Image } from "../components";
 
 export default function DetailsPage() {
   const { encodedUrl } = useParams();
@@ -31,7 +31,7 @@ export default function DetailsPage() {
   return (
     <div className="p-5 mx-auto sm:p-10 md:p-16 bg-gray-100 text-gray-800">
       <div className="flex flex-col max-w-3xl mx-auto overflow-hidden rounded">
-        <img
+        <Image
           src={article?.thumbnail}
           alt={article?.title}
           title={article?.title}

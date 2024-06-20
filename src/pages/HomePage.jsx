@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { useGetNewsListQuery } from "../features/news/newsApi";
-import CategoryList from "../components/CategoryList";
-import NewsList from "../components/NewsList";
+import { CategoryList, NewsList } from "../components";
 
 const HomePage = () => {
   const [page, setPage] = useState(1);
