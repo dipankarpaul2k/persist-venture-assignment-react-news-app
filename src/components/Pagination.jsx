@@ -1,5 +1,3 @@
-// import React from "react";
-
 const Pagination = ({ page, setPage }) => {
   // Scroll the page to the top
   const scrollToTop = () => {
@@ -9,11 +7,13 @@ const Pagination = ({ page, setPage }) => {
     });
   };
 
+  // Handle the previous page change event
   const handlePreviousPage = () => {
     scrollToTop();
     setPage((prev) => Math.max(prev - 1, 1));
   };
 
+  // Handle the next page change event
   const handleNextPage = () => {
     setPage((prev) => prev + 1);
     scrollToTop();

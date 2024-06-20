@@ -10,14 +10,16 @@ const Image = ({
   fallbackSrc = "https://placehold.co/600x400?text=Alt%20Image",
   ...props
 }) => {
+  // Track the current src of the image
   const [currentSrc, setCurrentSrc] = useState(src);
 
+  // Error handler for the image
   const handleError = (event) => {
     if (onError) {
-      onError(event);
+      onError(event); // Call the provided onError callback if it exists
     }
     if (fallbackSrc) {
-      setCurrentSrc(fallbackSrc);
+      setCurrentSrc(fallbackSrc); // Set the fallback source if the image fails to load
     }
   };
 

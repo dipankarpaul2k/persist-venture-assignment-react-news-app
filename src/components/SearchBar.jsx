@@ -5,18 +5,23 @@ import { FaSearch } from "react-icons/fa";
 export default function SearchBar() {
   const navigate = useNavigate();
 
+  // Handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.currentTarget;
 
+    // Get form data
     const formData = Object.fromEntries(new FormData(form));
 
+    // Navigate to search results page with search query
     if (formData) {
       navigate(`/search/${formData.search}`);
     }
 
+    // Reset form
     form.reset();
 
+    // Blur active element (e.g., keyboard) to dismiss virtual mobile keyboard
     if (document.activeElement) {
       document.activeElement.blur();
     }

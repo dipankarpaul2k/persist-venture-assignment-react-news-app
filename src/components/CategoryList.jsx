@@ -5,21 +5,28 @@ export default function CategoryList({
   selectedCategory,
   setSelectedCategory,
 }) {
+  // Reference to the container element
   const containerRef = useRef(null);
+  // State to track if the user is dragging the container
   const [isDragging, setIsDragging] = useState(false);
+  // State to track the initial X position when dragging starts
   const [startX, setStartX] = useState(0);
+  // State to track the initial scroll position when dragging starts
   const [scrollLeft, setScrollLeft] = useState(0);
 
+  // Handler for mouse down event
   const handleMouseDown = (e) => {
     setIsDragging(true);
     setStartX(e.pageX - containerRef.current.offsetLeft);
     setScrollLeft(containerRef.current.scrollLeft);
   };
 
+  // Handler for mouse up event
   const handleMouseUp = () => {
     setIsDragging(false);
   };
 
+  // Handler for mouse move event
   const handleMouseMove = (e) => {
     if (!isDragging) return;
     e.preventDefault();
@@ -28,6 +35,7 @@ export default function CategoryList({
     containerRef.current.scrollLeft = scrollLeft - walk;
   };
 
+  // Handler for mouse leave event
   const handleMouseLeave = () => {
     setIsDragging(false);
   };

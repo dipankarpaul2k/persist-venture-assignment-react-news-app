@@ -10,6 +10,7 @@ const NewsList = ({
   setPage,
   isFetching,
 }) => {
+  // If articles are loading, display skeleton loaders
   if (isLoading) {
     return (
       <div className="flex flex-col gap-4 p-4">
@@ -21,6 +22,7 @@ const NewsList = ({
     );
   }
 
+  // If there was an error fetching the articles, display an error message
   if (error) {
     return <div>Error occurred: {error.message}</div>;
   }

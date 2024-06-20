@@ -5,9 +5,11 @@ import { useSearchNewsQuery } from "../features/news/newsApi";
 import { NewsList } from "../components";
 
 const SearchPage = () => {
+  // State to manage the current page number
   const [page, setPage] = useState(1);
   let { keywords } = useParams();
 
+  // Fetch news list based on search keywords
   const { data, error, isFetching, isLoading } = useSearchNewsQuery({
     page,
     query: keywords,

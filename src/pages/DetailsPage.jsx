@@ -7,17 +7,21 @@ import { formatTime } from "../utils/helperFns";
 import { Image, SkeletonNews } from "../components";
 
 export default function DetailsPage() {
+  // Get the URL parameter for the news article
   const { encodedUrl } = useParams();
   const url = decodeURIComponent(encodedUrl);
 
+  // Fetch the news article data
   const { loading, error, data: article } = useFetchNews(url);
   // console.log(article);
 
+  // Sanitize the HTML content of the article
   const sanitizeHtml = DOMPurify.sanitize(article?.content, {
     FORBID_TAGS: ["ul", "li", "a", "header"],
   });
   const authorsLength = article?.authors.length;
 
+  // Scroll to the top of the page when component mounts
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -25,6 +29,7 @@ export default function DetailsPage() {
     });
   }, []);
 
+  // Display loading skeleton while data is loading
   if (loading) {
     return (
       <>
@@ -34,6 +39,8 @@ export default function DetailsPage() {
       </>
     );
   }
+
+  // Display error message if an error occurs
   if (error) {
     console.log(error);
     return (
@@ -43,6 +50,7 @@ export default function DetailsPage() {
     );
   }
 
+  // Display the news article details
   return (
     <div className="p-5 mx-auto sm:p-10 md:p-16 bg-gray-100 text-gray-800">
       <div className="flex flex-col max-w-3xl mx-auto overflow-hidden rounded">

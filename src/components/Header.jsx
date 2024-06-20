@@ -5,9 +5,12 @@ import { FaArrowLeft, FaBookmark, FaSearch } from "react-icons/fa";
 import SearchBar from "./SearchBar";
 
 export default function Header() {
+  // State to track if the search bar is visible
   const [searchVisible, setSearchVisible] = useState(false);
+  // Hook to navigate programmatically
   const navigate = useNavigate();
 
+  // Toggles the visibility of the search bar
   function handleSearchVisible() {
     setSearchVisible((prev) => !prev);
   }

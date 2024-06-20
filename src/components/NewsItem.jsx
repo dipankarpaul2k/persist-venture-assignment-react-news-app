@@ -9,15 +9,19 @@ import NewsItemFooter from "./NewsItemFooter";
 
 const NewsItem = ({ article, index }) => {
   const dispatch = useDispatch();
+  // Get the list of bookmarks from the Redux store
   const bookmarks = useSelector((state) => state.news.bookmarks);
+  // Check if the current article is bookmarked
   const isBookmarked = bookmarks?.some(
     (bookmark) => bookmark.url === article.url
   );
   // console.log(bookmarks);
   // console.log(isBookmarked);
 
+  // Encode the article URL for use in the link
   const encodedUrl = encodeURIComponent(article.url);
 
+  // Handler to add or remove bookmarks
   const handleBookmark = () => {
     if (isBookmarked) {
       dispatch(removeBookmark(article.url));
@@ -26,6 +30,7 @@ const NewsItem = ({ article, index }) => {
     }
   };
 
+  // Determine the flex direction based on the index (alternate rows)
   const flexDirection = index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row";
 
   return (
