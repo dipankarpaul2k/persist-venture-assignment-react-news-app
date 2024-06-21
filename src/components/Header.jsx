@@ -20,7 +20,7 @@ export default function Header() {
         {searchVisible ? (
           <div className="flex items-center justify-between gap-2 w-full">
             <div className="flex-1">
-              <SearchBar />
+              <SearchBar handleSearchVisible={handleSearchVisible} />
             </div>
             <button type="button" onClick={handleSearchVisible}>
               <FaArrowLeft />

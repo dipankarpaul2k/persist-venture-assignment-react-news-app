@@ -2,7 +2,7 @@
 import { useNavigate } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 
-export default function SearchBar() {
+export default function SearchBar({ handleSearchVisible }) {
   const navigate = useNavigate();
 
   // Handle form submission
@@ -24,6 +24,11 @@ export default function SearchBar() {
     // Blur active element (e.g., keyboard) to dismiss virtual mobile keyboard
     if (document.activeElement) {
       document.activeElement.blur();
+    }
+
+    // Check if the function exists before running
+    if (handleSearchVisible) {
+      handleSearchVisible();
     }
   };
 
