@@ -52,7 +52,7 @@ export default function DetailsPage() {
 
   // Display the news article details
   return (
-    <div className="p-5 mx-auto sm:p-10 md:p-16 bg-gray-100 text-gray-800">
+    <div className="p-5 mx-auto sm:p-10 md:p-16 bg-[#edf5fe] text-gray-800">
       <div className="flex flex-col max-w-3xl mx-auto overflow-hidden rounded">
         <Image
           src={article?.thumbnail}
