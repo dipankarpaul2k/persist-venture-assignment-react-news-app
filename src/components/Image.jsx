@@ -30,6 +30,7 @@ const Image = ({
       style={{ objectFit: fit, borderRadius: radius }}
       className={twMerge("w-full h-full")}
       alt={alt}
+      loading="lazy"
       {...props}
     />
   );
