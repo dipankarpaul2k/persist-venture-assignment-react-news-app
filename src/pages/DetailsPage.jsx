@@ -50,7 +50,7 @@ export default function DetailsPage() {
     );
   }
 
-  // Display the news article details // bg-[#D7E0E9] bg-[#edf5fe]
+  // Display the news article details
   return (
     <div className="p-5 mx-auto sm:p-10 md:p-16 bg-[#D7E0E9] text-gray-800">
       <div className="flex flex-col max-w-4xl mx-auto overflow-hidden rounded">
