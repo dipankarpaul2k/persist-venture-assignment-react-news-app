@@ -50,17 +50,21 @@ export default function DetailsPage() {
     );
   }
 
-  // Display the news article details
+  // Display the news article details // bg-[#D7E0E9] bg-[#edf5fe]
   return (
-    <div className="p-5 mx-auto sm:p-10 md:p-16 bg-[#edf5fe] text-gray-800">
-      <div className="flex flex-col max-w-3xl mx-auto overflow-hidden rounded">
-        <Image
-          src={article?.thumbnail}
-          alt={article?.title}
-          title={article?.title}
-          className="w-full h-60 sm:h-96 bg-gray-500"
-        />
-        <div className="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 lg:max-w-2xl sm:px-10 sm:mx-12 lg:rounded-md bg-gray-50">
+    <div className="p-5 mx-auto sm:p-10 md:p-16 bg-[#D7E0E9] text-gray-800">
+      <div className="flex flex-col max-w-4xl mx-auto overflow-hidden rounded">
+        {/* image container */}
+        <div className="w-full h-60 sm:h-96 overflow-hidden rounded">
+          <Image
+            src={article?.thumbnail}
+            alt={article?.title}
+            title={article?.title}
+            className="w-full bg-gray-500"
+          />
+        </div>
+        {/* news details */}
+        <div className="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 lg:max-w-3xl sm:px-10 sm:mx-12 lg:rounded-md bg-[#edf5fe]">
           {/* content header */}
           <div className="space-y-2">
             {/* title */}
